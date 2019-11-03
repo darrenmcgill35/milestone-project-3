@@ -18,6 +18,14 @@ def review():
 def add_a_player():
     return render_template("add_a_player.html")
 
+@app.route('/review_a_player')
+def review_a_player():
+    return render_template("review_a_player.html")
+
+@app.route('/merchandise')
+def merchandise():
+    return render_template("merchandise.html")
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

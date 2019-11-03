@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Player Review</title>
-</head>
-<body>
-    <nav>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('review') }}">Reviews</a></li>
-                <li><a href="{{ url_for('add_a_player') }}">Add a Player</a></li>
-                <li><a href="#">Review a Player</a></li>
-                <li><a href="#">Merchandise</a></li>
-            </ul>
-        </nav>
+{% extends 'base.html' %} {% block content %}
+<!-- Featured Review Row -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7">
+          <img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/first_review_img.jpg') }}" alt="">
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>Scotstown 2-12 Monaghan Harps 0-9</h4>
+            <p class="text-black-50 mb-0">"Superb McCarthy leads Scotstown back to the summit. 10 out of 10." - James Greenan.  </p>
+          </div>
+        </div>
+      </div>
 
-        <h1>Review Page</h1>
-
-</body>
+        <!-- Featured Review Row -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7">
+          <img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/second_review_img.jpg') }}" alt="">
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>Clontibret 1-12 Ballybay 0-10</h4>
+            <p class="text-black-50 mb-0">"Conor McManus knows a thing or two about commitment. He knows more about the demands placed on a modern day footballer and he knows full well that that load only grows heavier with talent. Definitely the best player on the field today."  - Damian Martin. </p>
+          </div>
+        </div>
+      </div>
+{% endblock %}
 </html>
