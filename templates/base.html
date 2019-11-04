@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap-grid.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/grayscale.min.css') }}" type="text/css" />
     <title>Player Review</title>
 </head>
@@ -57,12 +58,19 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
+            {% with messages = get_flashed_messages() %} {% if messages %}
+                <ul class="fa-2x mb-2 text-white">
+                    {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                    {% endfor %}
+                </ul>
+            {% endif %} {% endwith %}
 
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
-          <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+          <form method="POST" class="form-inline d-flex">
+            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address..." name="email">
             <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
           </form>
 
@@ -83,7 +91,7 @@
               <i class="fas fa-map-marked-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Address</h4>
               <hr class="my-4">
-              <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+              <div class="small text-black-50">Limegrove Manor, Monaghan, Co. Monaghan </div>
             </div>
           </div>
         </div>
@@ -95,7 +103,7 @@
               <h4 class="text-uppercase m-0">Email</h4>
               <hr class="my-4">
               <div class="small text-black-50">
-                <a href="#">hello@yourdomain.com</a>
+                <a href="#">hello@playerreview.com</a>
               </div>
             </div>
           </div>
@@ -107,21 +115,18 @@
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Phone</h4>
               <hr class="my-4">
-              <div class="small text-black-50">+1 (555) 902-8832</div>
+              <div class="small text-black-50">+353 86 3001112</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="social d-flex justify-content-center">
-        <a href="#" class="mx-2">
+        <a href="https://twitter.com/monaghangaa?lang=en" class="mx-2">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="#" class="mx-2">
+        <a href="https://www.facebook.com/monaghangaa/" class="mx-2">
           <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-github"></i>
         </a>
       </div>
 
@@ -131,7 +136,7 @@
   <!-- Footer -->
   <footer class="bg-black small text-center text-white-50">
     <div class="container">
-      Copyright &copy; Your Website 2019
+      Copyright &copy; Darren McGill 2019
     </div>
   </footer>
 
