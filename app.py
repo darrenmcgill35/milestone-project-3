@@ -1,9 +1,15 @@
 import os
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, redirect, request, flash, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.secret_key = 'darren_secret'
 
+app.config["MONGO_DBNAME"] = 'msProject3'
+app.config["MONGO_URI"] = 'mongodb+srv://darrenmcgill:darrenmcgill35@myfirstcluster-qtggr.mongodb.net/msProject3'
+
+mongo = PyMongo(app)
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -24,7 +30,7 @@ def add_a_player():
 
 @app.route('/review_a_player',methods=["GET", "POST"])
 def review_a_player():
-    return render_template("review_a_player.html", page_title="Review a Player")
+    return render_template("review_a_player.html", page_title="Review a Player", reviews=mongo.db.reviews.find())
 
 
 @app.route('/merchandise',methods=["GET", "POST"])
