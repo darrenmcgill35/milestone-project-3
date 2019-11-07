@@ -1,38 +1,33 @@
 {% extends 'base.html' %} {% block content %}
         <h1>{{ page_title }}</h1>
-        {% for review in reviews %}
-            {{ review.player_name }}
-            {{ review.player_club }}
-            {{ review.player_position }}
-            {{ review.player_review }}
-            {{ review.issue_date }}
-            {{ review.review_from }}
-        {% endfor %}
+
     <ul class="collapsible">
+        {% for review in reviews %}
     <li>
       <div class="collapsible-header"><i class="material-icons">emoji_people</i>Player Name:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.player_name }}</span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">sports_soccer</i>Players Club:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.player_club }}</span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">sports_handball</i>Players Position:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.player_position }}</span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">create</i>Review:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.player_review }}</span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">access_time</i>Date:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.issue_date }}</span></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">person_pin</i>Reviewed by:</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-body"><span>{{ review.review_from }}</span></div>
     </li>
+    {% endfor %}
   </ul>
 
 
