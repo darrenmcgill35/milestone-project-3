@@ -1,3 +1,39 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{{ page_title }}</h1>
+<h1 class="text-center">{{ page_title }}</h1>
+    <section>
+    <h4 class="text-center merchandise">All merchandise available in your club colours</h4>
+     <div class="row">
+        <div class="col-12 col-6 col-md-4">
+            <img src="{{ url_for('static', filename='img/hat.png') }}" alt="Hat" style="width:100%">
+            <h5 class="text-center">County & Clubs Hats -  €12.99</h5>
+        </div>
+
+        <div class="col-12 col-6 col-md-4">
+            <img src="{{ url_for('static', filename='img/balls.png') }}" alt="Balls" style="width:100%">
+         <h5 class="text-center">County & Clubs Balls -  €12.99</h5>
+        </div>
+
+        <div class="col-12 col-6 col-md-4">
+            <img src="{{ url_for('static', filename='img/tees.png') }}" alt="Tees" style="width:100%">
+            <h5 class="text-center">County & Clubs Tees -  €12.99</h5>
+        </div>
+     </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <img src="{{ url_for('static', filename='img/tops.png') }}" alt="tops" style="width:100%">
+            <h5 class="text-center">County & Clubs Hats -  €12.99</h5>
+        </div>
+
+        <div class="col-sm">
+            <img src="{{ url_for('static', filename='img/hats.png') }}" alt="hats" style="width:100%">
+         <h5 class="text-center">County & Clubs Tops -  €45.99</h5>
+        </div>
+
+        <div class="col-sm">
+            <img src="{{ url_for('static', filename='img/tshirt.png') }}" alt="T-Shirts" style="width:100%">
+            <h5 class="text-center">County & Clubs T-Shirts -  €24.99</h5>
+        </div>
+     </div>
+    </section>
 {% endblock %}
