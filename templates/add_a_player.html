@@ -1,3 +1,28 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{{ page_title }}</h1>
+<h1 class="text-center">{{ page_title }}</h1>
+
+    <form action="" method="POST" class="col-sm-12">
+      <div class="form-row">
+        <div class="col-sm-12">
+          <input id="player_name" name="player_name" type="text" class="form-control" placeholder="Player Name">
+        </div>
+        <div class="col-sm-12">
+          <input id="player_club" name="player_club" type="text" class="form-control" placeholder="Player Club">
+        </div>
+          <div class="col-sm-12">
+          <input id="player_position" name="player_position" type="text" class="form-control" placeholder="Player Position">
+        </div>
+          <div class="col-sm-12">
+          <textarea id="player_review" name="player_review " class="form-control" rows="5" placeholder="Review"></textarea>
+        </div>
+          <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Date">
+        </div>
+          <div class="col-sm-12">
+          <input id="review_from" name="review_from" type="text" class="form-control" placeholder="Reviewed by">
+        </div>
+      </div>
+
+    </form>
+
 {% endblock %}

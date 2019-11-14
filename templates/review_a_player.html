@@ -1,35 +1,100 @@
 {% extends 'base.html' %} {% block content %}
         <h1>{{ page_title }}</h1>
 
-    <ul class="collapsible">
+    <div class="accordion" id="accordionExample">
         {% for review in reviews %}
-    <li>
-      <div class="collapsible-header"><i class="material-icons">emoji_people</i>Player Name:</div>
-      <div class="collapsible-body"><span>{{ review.player_name }}</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">sports_soccer</i>Players Club:</div>
-      <div class="collapsible-body"><span>{{ review.player_club }}</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">sports_handball</i>Players Position:</div>
-      <div class="collapsible-body"><span>{{ review.player_position }}</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">create</i>Review:</div>
-      <div class="collapsible-body"><span>{{ review.player_review }}</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">access_time</i>Date:</div>
-      <div class="collapsible-body"><span>{{ review.issue_date }}</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">person_pin</i>Reviewed by:</div>
-      <div class="collapsible-body"><span>{{ review.review_from }}</span></div>
-    </li>
-    {% endfor %}
-  </ul>
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Player Name:
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                {{ review.player_name }}
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Players Club:
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                  {{ review.player_club }}
+                 </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Players Position:
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                 {{ review.player_position }}
+                </div>
+            </div>
+          </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Review:
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                      {{ review.player_review }}
+                  </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      Date:
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                      {{ review.issue_date }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      Reviewed by:
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                      {{ review.review_from }}
+                  </div>
+                </div>
+          </div>
+        {% endfor %}
+    </div>
 
 
 {% endblock %}
-
