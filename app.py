@@ -26,7 +26,7 @@ def review():
 
 @app.route('/add_a_player', methods=["GET", "POST"])
 def add_a_player():
-    return render_template("add_a_player.html", page_title="Add a Player", players=mongo.db.players.find())
+    return render_template("add_a_player.html", page_title="Add & Review", players=mongo.db.players.find())
 
 
 @app.route('/insert_player', methods=['POST'])
@@ -38,7 +38,7 @@ def insert_player():
 
 @app.route('/review_a_player', methods=["GET", "POST"])
 def review_a_player():
-    return render_template("review_a_player.html", page_title="Review a Player", reviews=mongo.db.reviews.find())
+    return render_template("review_a_player.html", page_title="Edit & Delete", reviews=mongo.db.reviews.find())
 
 
 @app.route('/merchandise', methods=["GET", "POST"])

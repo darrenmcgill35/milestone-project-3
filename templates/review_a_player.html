@@ -1,16 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-        <h1 class="text-center">{{ page_title }}</h1>
+    <h1 class="text-center">{{ page_title }}</h1>
+    <h4 class="text-center">Edit & Delete previous submissions here</h4>
 
     <div class="accordion" id="accordionExample">
         {% for review in reviews %}
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <i class="fas fa-arrow-circle-down"></i>
-                </button>
-              </h2>
-            </div>
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
@@ -29,8 +22,15 @@
                   </div>
               </div>
             </div>
-          </div>
             {% endfor %}
     </div>
 {% endblock %}
 
+<div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fas fa-arrow-circle-down"></i>
+                </button>
+              </h2>
+            </div>
