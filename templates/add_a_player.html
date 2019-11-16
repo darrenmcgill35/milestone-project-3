@@ -1,27 +1,36 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="text-center">{{ page_title }}</h1>
 
-    <form action="" method="POST" class="col-sm-12">
+    <form action="{{ url_for('insert_player') }}" method="POST" class="col-sm-12">
       <div class="form-row">
         <div class="col-sm-12">
+            <i class="fas fa-user-alt"></i>
           <input id="player_name" name="player_name" type="text" class="form-control" placeholder="Player Name">
         </div>
         <div class="col-sm-12">
+            <i class="fas fa-futbol"></i>
           <input id="player_club" name="player_club" type="text" class="form-control" placeholder="Player Club">
         </div>
           <div class="col-sm-12">
+              <i class="fas fa-running"></i>
           <input id="player_position" name="player_position" type="text" class="form-control" placeholder="Player Position">
         </div>
           <div class="col-sm-12">
+              <i class="fas fa-pen"></i>
           <textarea id="player_review" name="player_review " class="form-control" rows="5" placeholder="Review"></textarea>
         </div>
           <div class="col-sm-12">
-          <input type="text" class="form-control" placeholder="Date">
+              <i class="fas fa-calendar-day"></i>
+          <input type="date" id="picker" class="form-control" placeholder="Date">
         </div>
           <div class="col-sm-12">
+              <i class="fas fa-user-edit"></i>
           <input id="review_from" name="review_from" type="text" class="form-control" placeholder="Reviewed by">
         </div>
       </div>
+        <br>
+
+    <button type="submit" class="btn btn-secondary" name="action">Add Player</button>
 
     </form>
 

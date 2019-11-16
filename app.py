@@ -26,7 +26,14 @@ def review():
 
 @app.route('/add_a_player', methods=["GET", "POST"])
 def add_a_player():
-    return render_template("add_a_player.html", page_title="Add a Player")
+    return render_template("add_a_player.html", page_title="Add a Player", players=mongo.db.players.find())
+
+
+@app.route('/insert_player', methods=['POST'])
+def insert_player():
+    reviews = mongo.db.reviews
+    reviews.insert_one(request.form.to_dict())
+    return redirect(url_for('review_a_player'))
 
 
 @app.route('/review_a_player', methods=["GET", "POST"])
