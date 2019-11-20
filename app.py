@@ -41,6 +41,35 @@ def review_a_player():
     return render_template("review_a_player.html", page_title="Edit & Delete", reviews=mongo.db.reviews.find())
 
 
+@app.route('/edit_review/<review_id>')
+def edit_review(review_id):
+    the_review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('editreview.html', review=the_review,
+                           categories=all_categories)
+
+
+@app.route('/update_review/<review_id>', methods=["POST"])
+def update_review(review_id):
+    reviews = mongo.db.tasks
+    reviews.update( {'_id': ObjectId(review_id)},
+    {
+        'player_name':request.form.get('player_name'),
+        'player_club':request.form.get('player_club'),
+        'player_position': request.form.get('player_position'),
+        'player_review': request.form.get('player_review'),
+        'issue_date':request.form.get('issue_date'),
+        'review_from': request.form.get('review_from')
+    })
+    return redirect(url_for('get_reviews'))
+
+
+@app.route('/delete_review/<review_id>')
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    return redirect(url_for('review_a_player'))
+
+
 @app.route('/merchandise', methods=["GET", "POST"])
 def merchandise():
     return render_template("merchandise.html", page_title="Merchandise")

@@ -7,17 +7,17 @@
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-                  <button type="button" class="btn btn-light">Edit</button>
-                    <button type="button" class="btn btn-dark">Delete</button>
+                    <a href="{{url_for('edit_review', review_id=review._id)}}" class="btn btn-outline-light">Edit</a>
+                    <a href="{{url_for('delete_review', review_id=review._id)}}" class="btn btn-dark">Delete</a>
                   <div class="form-group">
                     <!--<label for="exampleFormControlSelect1">Example select</label>-->
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <option><span>{{ review.player_name }}</span></option>
-                      <option><span>{{ review.player_club }}</span></option>
-                      <option><span>{{ review.player_position }}</span></option>
-                      <option><span>{{ review.player_review }}</span></option>
-                      <option><span>{{ review.issue_date }}</span></option>
-                      <option><span>{{ review.review_from }}</span></option>
+                          <option>{{ review.player_name }}</option>
+                          <option>{{ review.player_club }}</option>
+                          <option>{{ review.player_position }}</option>
+                          <option>{{ review.player_review }}</option>
+                          <option>{{ review.issue_date }}</option>
+                          <option>{{ review.review_from }}</option>
                     </select>
                   </div>
               </div>
@@ -25,12 +25,3 @@
             {% endfor %}
     </div>
 {% endblock %}
-
-<div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <i class="fas fa-arrow-circle-down"></i>
-                </button>
-              </h2>
-            </div>
