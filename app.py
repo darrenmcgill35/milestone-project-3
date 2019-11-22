@@ -19,9 +19,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/review', methods=["GET", "POST"])
-def review():
-    return render_template("review.html", page_title="Reviews")
+@app.route('/blog', methods=["GET", "POST"])
+def blog():
+    return render_template("blog.html", page_title="Blog")
 
 
 @app.route('/add_a_player', methods=["GET", "POST"])

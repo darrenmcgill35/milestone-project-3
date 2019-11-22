@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css" />-->
     <!--<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap-grid.min.css') }}" type="text/css" />-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/grayscale.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/grayscale.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
@@ -22,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ url_for('review') }}">Reviews</a>
+            <a class="nav-link js-scroll-trigger" href="{{ url_for('blog') }}">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="{{ url_for('add_a_player') }}">Add & Review</a>
@@ -150,8 +151,14 @@
     <!--<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>-->
 
+
   <!-- Plugin JavaScript -->
   <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeIvOSkdtBfdy4D3tKpp2MneySynRhcPE&callback=initMap"></script>
+    <script src="{{ url_for('static', filename='js/grayscale.js') }}"></script>
 
   <!-- Custom scripts for this template -->
   <script src="{{ url_for('static', filename='js/grayscale.min.js') }}"></script>

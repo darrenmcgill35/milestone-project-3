@@ -296,3 +296,6 @@ footer {
   padding: 5rem 0;
 }
 
+div#map {
+    min-height: 300px;
+}
