@@ -32,7 +32,15 @@ def add_a_player():
 @app.route('/insert_player', methods=['POST'])
 def insert_player():
     reviews = mongo.db.reviews
-    reviews.insert_one(request.form.to_dict())
+    print("aa: " + str(request.form.to_dict))
+    reviews.insert_one({
+        'player_name': request.form.get('player_name'),
+        'player_club': request.form.get('player_club'),
+        'player_position': request.form.get('player_position'),
+        'player_review': request.form.get('player_review'),
+        'issue_date': request.form.get('picker'),
+        'review_from': request.form.get('review_from')
+    })
     return redirect(url_for('review_a_player'))
 
 
@@ -52,13 +60,13 @@ def edit_review(review_id):
 @app.route('/update_review/<review_id>', methods=["POST"])
 def update_review(review_id):
     reviews = mongo.db.tasks
-    reviews.update( {'_id': ObjectId(review_id)},
+    reviews.update({'_id': ObjectId(review_id)},
     {
-        'player_name':request.form.get('player_name'),
-        'player_club':request.form.get('player_club'),
+        'player_name': request.form.get('player_name'),
+        'player_club': request.form.get('player_club'),
         'player_position': request.form.get('player_position'),
         'player_review': request.form.get('player_review'),
-        'issue_date':request.form.get('issue_date'),
+        'issue_date': request.form.get('picker'),
         'review_from': request.form.get('review_from')
     })
     return redirect(url_for('get_reviews'))

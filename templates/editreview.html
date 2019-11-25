@@ -18,11 +18,11 @@
         </div>
           <div class="col-sm-12">
               <label for="player_review"><i class="fas fa-pen"></i></label>
-          <textarea id="player_review" name="player_review " class="form-control" rows="5" placeholder="Review" value="{{ review.player_review }}"></textarea>
+          <input id="player_review" name="player_review" type="text" class="form-control" placeholder="Review" value="{{ review.player_review }}">
         </div>
           <div class="col-sm-12">
                <label for="picker"><i class="fas fa-calendar-day"></i></label>
-          <input type="date" id="picker"  class="form-control" placeholder="Date" value="{{ review.issue_date }}">
+          <input type="date" id="picker" name="picker" class="form-control" placeholder="Date" value="{{ review.issue_date }}">
         </div>
           <div class="col-sm-12">
               <label for="review_from"><i class="fas fa-user-edit"></i></label>
