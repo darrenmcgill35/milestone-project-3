@@ -98,7 +98,7 @@
 }
 
 .masthead h1 {
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', serif;
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
@@ -138,7 +138,7 @@
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', serif;
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: .15rem;
@@ -215,7 +215,7 @@
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', serif;
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -233,7 +233,7 @@
 
 .contact-section .card h4 {
   font-size: 0.8rem;
-  font-family: 'Varela Round';
+  font-family: 'Varela Round', serif;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
@@ -267,7 +267,7 @@
 }
 
 body {
-  font-family: 'Nunito';
+  font-family: 'Nunito', serif;
   letter-spacing: 0.0625em;
 }
 
@@ -297,5 +297,5 @@ footer {
 }
 
 div#map {
-    min-height: 300px;
+    min-height: 350px;
 }
