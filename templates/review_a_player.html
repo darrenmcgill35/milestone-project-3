@@ -5,9 +5,9 @@
     <div>
         {% for review in reviews %}
 
-            <div>
+            <div class="container">
               <div class="card-body dropright">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary dropdown-toggle btn-review" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    Review
                      </button>
                   <div class="dropdown-menu">
@@ -18,8 +18,8 @@
                       <span class="dropdown-item-text">{{ review.issue_date }}</span>
                       <span class="dropdown-item-text">{{ review.review_from }}</span>
                   </div>
-                    <a href="{{url_for('delete_review', review_id=review._id)}}" class="btn btn-danger float-right">Delete</a>
-                    <a href="{{url_for('edit_review', review_id=review._id)}}" class="btn btn-primary float-right">Edit</a>
+                    <a href="{{url_for('delete_review', review_id=review._id)}}" class="btn btn-danger float-right btn-delete">Delete</a>
+                    <a href="{{url_for('edit_review', review_id=review._id)}}" class="btn btn-primary float-right btn-edit">Edit</a>
               </div>
             </div>
             {% endfor %}
