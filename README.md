@@ -28,17 +28,16 @@ Submissions.
 
 The Merchandise page displays a number of projects with prices and a map with the store location. 
 
-All social icons are functional and direct the user to Two different 
-pages. 
+All social icons are functional and direct the user to Two different pages. 
 
 
 ## *UX*
 
 This website is designed and created for a wide varity of people.
-Responsive design was important as members of the public could check locations, buy 
-tickets and check results on their mobiles or tablets when they are on there way to games.  
+Responsive design was important as members of the public could add and review players 
+when out and about at matches or at home on a tablet or desktop.  
 
-Click on the directory [user-design-experience](https://github.com/darrenmcgill35/milestone2/tree/master/assets/user-design-experience) for all the Planes, 
+Click on the directory [user-design-experience](https://github.com/darrenmcgill35/milestone-project-3/tree/master/static/user-design-experience) for all the Planes, 
 including User Stories, wireframes, mock-ups, diagrams that I created as part 
 of the design process.
 
@@ -85,7 +84,7 @@ I validated my maps.js file with Esprima,
 
 Result - Code is syntactically valid.
 
-I sent the heroku link to 4 different people to test of different mobiles. 
+I sent the heroku link to many people to test of different mobiles tablets and desktops.  
 
 
 ## *Deployment*
