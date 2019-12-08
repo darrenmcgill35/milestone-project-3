@@ -80,11 +80,12 @@ I validated my CSS with The W3C CSS Validation Service,
 
 Congratulations! No Error Found.
 
-I validated my maps.js file with Esprima,
+I checked my app.py code using Python syntax checker
 
-Result - Code is syntactically valid.
+Result - No syntax errors detected :)
 
-I sent the heroku link to many people to test of different mobiles tablets and desktops.  
+I sent the heroku link to many people to test of different mobiles tablets and desktops. 
+All pages, images and forms were responsive with no issues.  
 
 
 ## *Deployment*
