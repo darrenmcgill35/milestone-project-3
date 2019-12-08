@@ -54,6 +54,7 @@ of the design process.
 * Jinja templates
 * GIT
 * GITHUB
+* Heroku
 * Google Chrome developer tools
 * Pycharm IDE from JetBrains
 * Fontawesome
@@ -84,6 +85,8 @@ I validated my maps.js file with Esprima,
 
 Result - Code is syntactically valid.
 
+I sent the heroku link to 4 different people to test of different mobiles. 
+
 
 ## *Deployment*
 
@@ -96,10 +99,12 @@ Result - Code is syntactically valid.
       "Updated footer in index.html")
     * git push (This command is used to upload local repository content
       to a remote repository.)
-    * Input username and password (Once this is done correctly all files will 
-       be available in the software development platform GITHUB)
     
-1. Once in a GITHUB repositories it was made live using GITHUB Pages. 
+1. Once in a GITHUB repositories the code was live using GITHUB Pages. 
+
+1. As this is a python app the website was made live using Heroku.
+1. Similar to GITHUB using git add and commit I pushed to Heroku using 
+git push heroku master. 
 
 ## *Credits*
 
@@ -107,13 +112,9 @@ Result - Code is syntactically valid.
 All text information on the site is my own.
     
 #### Media
-All county crest were searched for using google, a screen shot was taken and 
-cropped to size
+All links to articles are taken from different media platforms.
+All images on the merchandise page are my own.
     
-#### logo
-The GAA logo was search for using google images and a screen shot was taken and 
-cropped to size.
-
 #### Main images
 The main image/background image was taken by myself and is off 
 Croke Park Stadium in Dublin.
