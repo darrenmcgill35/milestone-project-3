@@ -53,7 +53,8 @@ of the design process.
 * Jinja templates
 * GIT
 * GITHUB
-* Heroku
+* Heroku - to host the website
+* MongoDB Atlas - for storing input data from my form. 
 * Google Chrome developer tools
 * Pycharm IDE from JetBrains
 * Fontawesome
@@ -84,10 +85,26 @@ I checked my app.py code using Python syntax checker
 
 Result - No syntax errors detected :)
 
-I sent the heroku link to many people to test of different mobiles tablets and desktops. 
-All pages, images and forms were responsive with no issues.  
+Using a checklist I sourced from a testing [website](https://geteasyqa.com/qa/test-website/) I checked 
+1. Documentation
+1. Website functionality
+    * Links testing
+    * Forms testing for all pages
+    * HTML/CSS validation
+1. Usability
+    * Navigation testing
+    * Content testing
+1. UI (User Interface) 
+    * Testing with different screen resolutions
+    * Testing the graphical user interface on target devices: smartphones and tablets.
+1. Compatibility (Configuration)
+    * Cross-platform testing
+    * Cross-browser website testing
+    * Database testing
+I sent the heroku link to many people to test on different mobiles tablets and desktops. 
+All pages, images and forms were responsive with no issues. 
 
-
+ 
 ## *Deployment*
 
 1. The Website was coded using the Pycharm IDE. 
@@ -104,7 +121,7 @@ All pages, images and forms were responsive with no issues.
 
 1. As this is a python app the website was made live using Heroku.
 1. Similar to GITHUB using git add and commit I pushed to Heroku using 
-git push heroku master. 
+'git push heroku master'. 
 
 ## *Credits*
 

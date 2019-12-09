@@ -3,32 +3,35 @@ from flask import Flask, render_template, redirect, request, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+# create app variable
 app = Flask(__name__)
 app.secret_key = 'darren_secret'
 
+# configure mongodb
 app.config["MONGO_DBNAME"] = 'msProject3'
 app.config["MONGO_URI"] = 'mongodb+srv://darrenmcgill:darrenmcgill35@myfirstcluster-qtggr.mongodb.net/msProject3'
 
+# Initialise PyMongo
 mongo = PyMongo(app)
 
-
+# Setting up route to homepage
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         flash("Thanks, You have subscribed")
     return render_template("index.html")
 
-
+# Setting up route to blog page
 @app.route('/blog', methods=["GET", "POST"])
 def blog():
     return render_template("blog.html", page_title="Blog")
 
-
+# Setting up route to add & review page
 @app.route('/add_a_player', methods=["GET", "POST"])
 def add_a_player():
     return render_template("add_a_player.html", page_title="Add & Review", players=mongo.db.players.find())
 
-
+# Setting up route to add a player to the database
 @app.route('/insert_player', methods=['POST'])
 def insert_player():
     reviews = mongo.db.reviews
@@ -43,12 +46,12 @@ def insert_player():
     })
     return redirect(url_for('review_a_player'))
 
-
+# Setting up route to review a player
 @app.route('/review_a_player', methods=["GET", "POST"])
 def review_a_player():
     return render_template("review_a_player.html", page_title="Edit & Delete", reviews=mongo.db.reviews.find())
 
-
+# Setting up route to edit date
 @app.route('/edit_review/<review_id>')
 def edit_review(review_id):
     the_review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
@@ -56,7 +59,7 @@ def edit_review(review_id):
     return render_template('editreview.html', review=the_review,
                            categories=all_categories)
 
-
+# Setting up route to update date
 @app.route('/update_review/<review_id>', methods=["POST"])
 def update_review(review_id):
     reviews = mongo.db.tasks
@@ -71,16 +74,18 @@ def update_review(review_id):
     })
     return redirect(url_for('get_reviews'))
 
-
+# Setting up route to delete data from review page
 @app.route('/delete_review/<review_id>')
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     return redirect(url_for('review_a_player'))
 
-
+# Setting up route to merchandise page
 @app.route('/merchandise', methods=["GET", "POST"])
 def merchandise():
     return render_template("merchandise.html", page_title="Merchandise")
+
+# condition to run the app
 
 
 if __name__ == '__main__':
