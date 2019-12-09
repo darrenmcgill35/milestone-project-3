@@ -101,6 +101,7 @@ Using a checklist I sourced from a testing [website](https://geteasyqa.com/qa/te
     * Cross-platform testing
     * Cross-browser website testing
     * Database testing
+    
 I sent the heroku link to many people to test on different mobiles tablets and desktops. 
 All pages, images and forms were responsive with no issues. 
 
