@@ -1,12 +1,18 @@
 {% extends 'base.html' %} {% block content %}
-    <h1 class="text-center">{{ page_title }}</h1>
+    {% if scroll %}
+            <script>
+                document.location.hash = '#' + '{{ scroll }}';
+
+            </script>
+    {% endif %}
+    <h1 class="text-center" id="review-player-section">{{ page_title }}</h1>
     <h4 class="text-center">Edit & Delete previous submissions here</h4>
     <div>
         {% for review in reviews %}
             <div class="container">
               <div class="card-body">
                   <button class="col-sm-12 btn btn-secondary dropdown-toggle btn-review" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Review
+                   Review: {{ review.player_name }}
                      </button>
                   <div class="dropdown-menu">
                       <span class="dropdown-item-text">{{ review.player_name }}</span>

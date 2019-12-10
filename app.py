@@ -24,12 +24,12 @@ def index():
 # Setting up route to blog page
 @app.route('/blog', methods=["GET", "POST"])
 def blog():
-    return render_template("blog.html", page_title="Blog")
+    return render_template("blog.html", scroll='blog-section', page_title="Blog")
 
 # Setting up route to add & review page
 @app.route('/add_a_player', methods=["GET", "POST"])
 def add_a_player():
-    return render_template("add_a_player.html", page_title="Add & Review", players=mongo.db.players.find())
+    return render_template("add_a_player.html", scroll='review-section', page_title="Add & Review", players=mongo.db.players.find())
 
 # Setting up route to add a player to the database
 @app.route('/insert_player', methods=['POST'])
@@ -49,7 +49,7 @@ def insert_player():
 # Setting up route to review a player
 @app.route('/review_a_player', methods=["GET", "POST"])
 def review_a_player():
-    return render_template("review_a_player.html", page_title="Edit & Delete", reviews=mongo.db.reviews.find())
+    return render_template("review_a_player.html", scroll='review-player-section', page_title="Edit & Delete", reviews=mongo.db.reviews.find())
 
 # Setting up route to edit date
 @app.route('/edit_review/<review_id>')
@@ -83,7 +83,7 @@ def delete_review(review_id):
 # Setting up route to merchandise page
 @app.route('/merchandise', methods=["GET", "POST"])
 def merchandise():
-    return render_template("merchandise.html", page_title="Merchandise")
+    return render_template("merchandise.html", scroll='merchandise-section',  page_title="Merchandise")
 
 # condition to run the app
 
