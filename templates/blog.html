@@ -1,12 +1,15 @@
 {% extends 'base.html' %} {% block content %}
+
     {% if scroll %}
             <script>
                 document.location.hash = '#' + '{{ scroll }}';
-
             </script>
     {% endif %}
-        <h2 class="text-center" id = "blog-section" >{{ page_title }}</h2>
+
+    <div id = "blog-section" >
+        <h2 class="text-center" >{{ page_title }}</h2>
         <h4 class="text-center">Catch up on all the action here!</h4>
+    </div>
     <br>
             <!-- Article one -->
       <div class="row">

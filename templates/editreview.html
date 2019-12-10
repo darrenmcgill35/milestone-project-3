@@ -1,38 +1,46 @@
 {% extends 'base.html' %} {% block content %}
 
-    <h4 class="text-center">Make chances to your review here, then select the 'Edit Review' button.</h4>
+    {% if scroll %}
+            <script>
+                document.location.hash = '#' + '{{ scroll }}';
+            </script>
+    {% endif %}
+
+    <div id="edit-player-section">
+        <h4 class="text-center">Make chances to your review here, then select the 'Edit Review' button.</h4>
+    </div>
 
     <form action="{{ url_for('insert_player') }}" method="POST" class="col-sm-12">
-      <div class="form-row">
-        <div class="col-sm-12">
-           <label for="player_name"><i class="fas fa-user-alt"></i></label>
-          <input id="player_name" name="player_name" type="text" class="form-control" placeholder="Player Name" value="{{ review.player_name }}">
-        </div>
-        <div class="col-sm-12">
-            <label for="player_club"><i class="fas fa-futbol"></i></label>
-          <input id="player_club" name="player_club" type="text" class="form-control" placeholder="Player Club" value="{{ review.player_club }}">
-        </div>
-          <div class="col-sm-12">
-              <label for="player_position"><i class="fas fa-running"></i></label>
-          <input id="player_position" name="player_position" type="text" class="form-control" placeholder="Player Position" value="{{ review.player_position }}">
-        </div>
-          <div class="col-sm-12">
-              <label for="player_review"><i class="fas fa-pen"></i></label>
-          <input id="player_review" name="player_review" type="text" class="form-control" placeholder="Review" value="{{ review.player_review }}">
-        </div>
-          <div class="col-sm-12">
-               <label for="picker"><i class="fas fa-calendar-day"></i></label>
-          <input type="date" id="picker" name="picker" class="form-control" placeholder="Date" value="{{ review.issue_date }}">
-        </div>
-          <div class="col-sm-12">
-              <label for="review_from"><i class="fas fa-user-edit"></i></label>
-          <input id="review_from" name="review_from" type="text" class="form-control" placeholder="Reviewed by" value="{{ review.review_from }}">
-        </div>
-      </div>
-        <br>
+          <div class="form-row">
+            <div class="col-sm-12">
+               <label for="player_name"><i class="fas fa-user-alt"></i></label>
+              <input id="player_name" name="player_name" type="text" class="form-control" placeholder="Player Name" value="{{ review.player_name }}">
+            </div>
+            <div class="col-sm-12">
+                <label for="player_club"><i class="fas fa-futbol"></i></label>
+              <input id="player_club" name="player_club" type="text" class="form-control" placeholder="Player Club" value="{{ review.player_club }}">
+            </div>
+              <div class="col-sm-12">
+                  <label for="player_position"><i class="fas fa-running"></i></label>
+              <input id="player_position" name="player_position" type="text" class="form-control" placeholder="Player Position" value="{{ review.player_position }}">
+            </div>
+              <div class="col-sm-12">
+                  <label for="player_review"><i class="fas fa-pen"></i></label>
+              <input id="player_review" name="player_review" type="text" class="form-control" placeholder="Review" value="{{ review.player_review }}">
+            </div>
+              <div class="col-sm-12">
+                   <label for="picker"><i class="fas fa-calendar-day"></i></label>
+              <input type="date" id="picker" name="picker" class="form-control" placeholder="Date" value="{{ review.issue_date }}">
+            </div>
+              <div class="col-sm-12">
+                  <label for="review_from"><i class="fas fa-user-edit"></i></label>
+              <input id="review_from" name="review_from" type="text" class="form-control" placeholder="Reviewed by" value="{{ review.review_from }}">
+            </div>
+          </div>
 
-    <button type="submit" class="btn btn-secondary" name="action">Edit Review</button>
+            <br>
 
+        <button type="submit" class="btn btn-secondary" name="action">Edit Review</button>
     </form>
 
 {% endblock %}

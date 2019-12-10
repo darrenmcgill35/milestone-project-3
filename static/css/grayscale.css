@@ -299,3 +299,23 @@ footer {
 div#map {
     min-height: 350px;
 }
+
+#blog-section{
+  padding-top: 80px;
+}
+
+#merchandise-section{
+  padding-top: 80px;
+}
+
+#review-section{
+  padding-top: 80px;
+}
+
+#review-player-section{
+  padding-top: 80px;
+}
+
+#edit-player-section{
+  padding-top: 80px;
+}

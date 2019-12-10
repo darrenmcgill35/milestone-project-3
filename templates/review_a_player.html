@@ -1,31 +1,35 @@
 {% extends 'base.html' %} {% block content %}
+
     {% if scroll %}
             <script>
                 document.location.hash = '#' + '{{ scroll }}';
-
             </script>
     {% endif %}
-    <h1 class="text-center" id="review-player-section">{{ page_title }}</h1>
-    <h4 class="text-center">Edit & Delete previous submissions here</h4>
+
+    <div id="review-player-section">
+        <h2 class="text-center" >{{ page_title }}</h2>
+        <h4 class="text-center">Edit & Delete previous submissions here</h4>
+    </div>
+    <br>
     <div>
         {% for review in reviews %}
-            <div class="container">
-              <div class="card-body">
-                  <button class="col-sm-12 btn btn-secondary dropdown-toggle btn-review" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   {{ review.player_name }}
-                     </button>
-                  <div class="dropdown-menu">
-                      <span class="dropdown-item-text">{{ review.player_name }}</span>
-                      <span class="dropdown-item-text">{{ review.player_club }}</span>
-                      <span class="dropdown-item-text">{{ review.player_position }}</span>
-                      <span class="dropdown-item-text">{{ review.player_review }}</span>
-                      <span class="dropdown-item-text">{{ review.issue_date }}</span>
-                      <span class="dropdown-item-text">{{ review.review_from }}</span>
+                <div class="container">
+                  <div class="card-body">
+                        <button class="col-sm-12 btn btn-secondary dropdown-toggle btn-review" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ review.player_name }}
+                         </button>
+                      <div class="dropdown-menu">
+                          <span class="dropdown-item-text">{{ review.player_name }}</span>
+                          <span class="dropdown-item-text">{{ review.player_club }}</span>
+                          <span class="dropdown-item-text">{{ review.player_position }}</span>
+                          <span class="dropdown-item-text">{{ review.player_review }}</span>
+                          <span class="dropdown-item-text">{{ review.issue_date }}</span>
+                          <span class="dropdown-item-text">{{ review.review_from }}</span>
+                      </div>
+                        <a href="{{url_for('delete_review', review_id=review._id)}}" class="mx-auto btn btn-danger btn-delete">Delete</a>
+                        <a href="{{url_for('edit_review', review_id=review._id)}}" class="mx-auto btn btn-primary float-right btn-edit">Edit</a>
                   </div>
-                    <a href="{{url_for('delete_review', review_id=review._id)}}" class="mx-auto btn btn-danger btn-delete">Delete</a>
-                    <a href="{{url_for('edit_review', review_id=review._id)}}" class="mx-auto btn btn-primary float-right btn-edit">Edit</a>
-              </div>
-            </div>
+                </div>
             {% endfor %}
     </div>
 {% endblock %}

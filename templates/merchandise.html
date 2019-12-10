@@ -1,13 +1,17 @@
 {% extends 'base.html' %} {% block content %}
+
     {% if scroll %}
             <script>
                 document.location.hash = '#' + '{{ scroll }}';
-
             </script>
     {% endif %}
-<h1 class="text-center" id="merchandise-section">{{ page_title }}</h1>
-    <section>
+
+    <div id="merchandise-section">
+        <h2 class="text-center" >{{ page_title }}</h2>
         <h4 class="text-center merchandise">All merchandise available in your club colours</h4>
+    </div>
+    <br>
+    <section>
          <div class="row">
             <div class="col-12 col-6 col-md-4">
                 <img src="{{ url_for('static', filename='img/hat.png') }}" alt="Hat" style="width:100%">
@@ -41,13 +45,8 @@
                 <h5 class="text-center">County & Clubs T-Shirts -  €24.99</h5>
             </div>
          </div>
-
         <br>
-
         <h4 class="text-center merchandise">Find our store on the map.</h4>
-
         <div id="map"></div>
-
     </section>
-
 {% endblock %}

@@ -56,7 +56,7 @@ def review_a_player():
 def edit_review(review_id):
     the_review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('editreview.html', review=the_review,
+    return render_template('editreview.html', scroll='edit-player-section', review=the_review,
                            categories=all_categories)
 
 # Setting up route to update date
