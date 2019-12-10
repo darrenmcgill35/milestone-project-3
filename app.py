@@ -2,15 +2,17 @@ import os
 from flask import Flask, render_template, redirect, request, flash, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from config import Config
 
 # create app variable
 app = Flask(__name__)
-app.secret_key = 'darren_secret'
+
 
 # configure mongodb
 app.config["MONGO_DBNAME"] = 'msProject3'
-app.config["MONGO_URI"] = 'mongodb+srv://darrenmcgill:darrenmcgill35@myfirstcluster-qtggr.mongodb.net/msProject3'
-
+# app.config["MONGO_URI"] = 'mongodb+srv://darrenmcgill:darrenmcgill35@myfirstcluster-qtggr.mongodb.net/msProject3'
+app.config["MONGO_URI"] = os.environ.get('MONGODB_URI')
+app.config.from_object(Config)
 # Initialise PyMongo
 mongo = PyMongo(app)
 
