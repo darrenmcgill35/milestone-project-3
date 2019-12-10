@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 # configure mongodb
 app.config["MONGO_DBNAME"] = 'msProject3'
-# app.config["MONGO_URI"] = 'mongodb+srv://darrenmcgill:darrenmcgill35@myfirstcluster-qtggr.mongodb.net/msProject3'
 app.config["MONGO_URI"] = os.environ.get('MONGODB_URI')
 app.config.from_object(Config)
 # Initialise PyMongo
