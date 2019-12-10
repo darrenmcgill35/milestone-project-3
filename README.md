@@ -47,6 +47,7 @@ of the design process.
 * HTML5 - markup language
 * CSS3 - used to style the page
 * Bootstrap 4 - for grid layout, navigation, responsive design and columns
+* Bootstrap Themes
 * Javascript - for adding the map to my site. 
 * Python
 * The Flask Framework
