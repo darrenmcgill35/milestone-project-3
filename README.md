@@ -124,6 +124,11 @@ All pages, images and forms were responsive with no issues.
 1. Similar to GITHUB using git add and commit I pushed to Heroku using 
 'git push heroku master'. 
 
+1. Later on in the project I was introduced to CICD - continuous integration and continuous delivery. Using
+my new Pycharm IDE I could just Click the green tick (Commit), write my commit message and click commit and push.
+After linking my Github repository to my Heroku app this one time push will update my code on Github and 
+deploy the app on Heroku. 
+
 ## *Credits*
 
 #### Content
